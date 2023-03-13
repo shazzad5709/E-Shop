@@ -16,4 +16,12 @@ export class ItemListComponent implements OnInit{
     this.myItems = this.itemService.getItems();
     console.log(this.myItems)
   }
+
+  requestItem(item_name: String): void{
+    alert('item ' + item_name + ' requested');
+  }
+
+  buyItem(item: Item) : void{
+    this.itemService.buy(item);
+  }
 }

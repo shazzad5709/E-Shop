@@ -10,13 +10,17 @@ export class ItemService {
 
   items: Item[] = [
     {id: 1, name: 'kacchi', price: 300, quantity: 1},
-    {id: 2, name: 'polao', price: 360, quantity: 2},
+    {id: 2, name: 'polao', price: 360, quantity: 0},
     {id: 3, name: 'kacchi-package', price: 810, quantity: 3},
     {id: 4, name: '5-combo', price: 1300, quantity: 5},
   ]
 
   getItems(): Item[] {
     return this.items
+  }
+
+  buy(item: Item): void {
+    item.quantity--;
   }
   
 }
