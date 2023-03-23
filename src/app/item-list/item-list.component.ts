@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 
@@ -9,24 +10,25 @@ import { ItemService } from '../item.service';
 })
 export class ItemListComponent implements OnInit{
   
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private router: Router) { }
 
   myItems: Item[] = []
 
   ngOnInit(): void {
-    this.myItems = this.itemService.getItems();
+    this.myItems = this.itemService.getItems()
     console.log(this.myItems)
   }
 
   requestItem(item_name: String): void{
-    alert('item ' + item_name + ' requested');
+    alert('item ' + item_name + ' requested')
   }
 
   buyItem(item: Item) : void{
-    this.itemService.buy(item);
+    this.itemService.buy(item)
   }
 
-  update(item: Item) {
-    
+  update(index: number) : void {
+    this.itemService.setItemsToBeUpdated(index)
+    this.router.navigate(['update'])
   }
 }

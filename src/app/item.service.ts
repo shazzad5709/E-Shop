@@ -15,12 +15,26 @@ export class ItemService {
     {id: 4, name: '5-combo', price: 1300, quantity: 5},
   ]
 
+  itemToBeUpdated: Item = new Item()
+
+
   getItems(): Item[] {
     return this.items
   }
 
   buy(item: Item): void {
-    item.quantity--;
+    item.quantity--
+  }
+
+  setItemsToBeUpdated(index: number): void {
+    let item = this.items.at(index)
+    if(item!=null) {
+      this.itemToBeUpdated = item
+    }
+  }
+
+  getItemsToBeUpdated(): Item {
+    return this.itemToBeUpdated
   }
   
 }
