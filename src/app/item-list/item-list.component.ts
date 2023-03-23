@@ -8,6 +8,7 @@ import { ItemService } from '../item.service';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit{
+  
   constructor(private itemService: ItemService) { }
 
   myItems: Item[] = []
@@ -23,5 +24,9 @@ export class ItemListComponent implements OnInit{
 
   buyItem(item: Item) : void{
     this.itemService.buy(item);
+  }
+
+  update(item: Item) {
+    
   }
 }

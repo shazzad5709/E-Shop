@@ -3,8 +3,8 @@
         <h3 class="text-xl">{{item.name}}</h3>
         <p>Price: {{item.price}}</p>
         <p>Quantity: {{item.quantity}}</p>
-        <button *ngIf="item.quantity>0" class="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full" (click)='buyItem(item)'>Buy</button>
-        <button *ngIf="item.quantity===0" class="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full" (click)='requestItem(item.name)'>Request Stock</button>
+        <button class="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded-md" (click)='update(item)'>Update</button>
+        <!-- <button *ngIf="item.quantity===0" class="bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded-full" (click)='requestItem(item.name)'>Request Stock</button> -->
     </li>
     
 </ul>
