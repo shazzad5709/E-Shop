@@ -24,6 +24,6 @@ export class UpdateComponent implements OnInit {
   updateItem: Item = this.itemService.getItemsToBeUpdated()
   
   update() : void {
-    // this.itemService.getItemsToBeUpdated()
+    this.router.navigate(['items'])
   }
 }
